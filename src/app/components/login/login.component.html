@@ -1,7 +1,17 @@
-<form>
-    <p-card header="Simple Card">
-        <p class="m-0">
-            Lorem ipsum dolor sit amet...
-        </p>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <p-card header="Login" [style]="{width: '360px'}">
+        <div class="field">
+            <label for="email" style="display: block;">Email</label>
+            <input type="text" style="width: 100%;" pInputText formControlName="email" id="email" name="email" placeholder="Escriba su email" />
+        </div> 
+    
+        <div class="field">
+            <label for="password" style="display: block;">Password</label>
+            <input type="password" style="width: 100%;" pInputText formControlName="password" id="password" name="password" placeholder="Escriba su contraseña" />
+        </div>
+    
+        <div style="display: flex; justify-content: center; margin-top: 10px;">
+            <p-button label="SIGN IN" styleClass="w-full" type="submit"/>
+        </div>
     </p-card>
 </form>
